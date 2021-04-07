@@ -1,0 +1,11 @@
+        /* https://www.w3schools.com/howto/howto_css_fixed_footer.asps */ 
+        .custom-footer {
+            background-color: aqua;
+            /* position: fixed; */ 
+            position: relative;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/1.2.0/balloon.min.css" integrity="sha512-6jHrqOB5TcbWsW52kWP9TTx06FHzpj7eTOnuxQrKaqSvpcML2HTDR2/wWWPOh/YvcQQBGdomHL/x+V1Hn+AWCA==" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css"> 
+</head>
+<body id="about-page">
+    <!-- used older version of animateCSS - https://scotch.io/tutorials/level-up-your-websites-with-animatecss -->
+    <div>
+        <div class="nav">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                  <a class="navbar-item" href="index.html">
+                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+                  </a>
+              
+                  <a id="navbar-hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                      <!-- the spans are the horizontal lines --> 
+                      <span class="animated fadeIn" aria-hidden="true"></span>
+                      <span class="animated fadeIn" aria-hidden="true"></span>
+                      <span class="animated fadeIn" aria-hidden="true"></span>
+                  </a>
+                  <div id="mobile-nav" class="mobile-nav">
+                      <!-- nav links added via JS -->
+                  </div>
+                </div>
+              
+                <div id="navbarBasicExample" class="navbar-menu">
+                  <div class="navbar-start">
+                      <!-- menus/locations/opening times will be navigated via scrollTo -->
+                      <a class="navbar-item" href="#menus">
+                          Menus
+                      </a>
+                      <a class="navbar-item" href="#location">
+                        Location 
+                      </a>
+                      <!-- the opening-times & location are the same section thus this is delibrate but may vary for mobile  -->
+                      <a class="navbar-item" href="#location">
+                        Opening times
+                    </a>
+
+                    <!-- these are seperate pages -->
+                    <a class="navbar-item">
+                      Handle bookings 
+                    </a>
+              
+                    <a class="navbar-item">
+                    About            
+                    </a>
+                </div>
+              </nav>
+        </div>
+        <div class="about"> 
+            <h1 class="heading title is-4">About the restaurant</h1>
+            <div class="columns intro">
+                <div class="column">
+                <img class="mobile" src="https://images.pexels.com/photos/4450334/pexels-photo-4450334.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> 
+                <!-- Slideshow container -->
+                  <div class="slideshow-container desktop">
+                    <!-- Full-width images with number and caption text -->
+                    <div class="slides fade">
+                      <div class="numbertext">1 / 3</div>
+                      <img src="https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100%">
+                      <div class="text">Caption Text</div>
+                    </div>
+                  
+                    <div class="slides fade">
+                      <div class="numbertext">2 / 3</div>
+                      <img src="https://images.pexels.com/photos/3745525/pexels-photo-3745525.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100%">
+                      <div class="text">Caption Two</div>
+                    </div>
+                  
+                    <div class="slides fade">
+                      <div class="numbertext">3 / 3</div>
+                      <img src="https://images.pexels.com/photos/6353751/pexels-photo-6353751.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:100%">
+                      <div class="text">Caption Three</div>
+                    </div>
+                  
+                    <!-- Next and previous buttons -->
+                    <!-- bug: only prev button is displayed & positioned correctly 
+                    <a class="prev desktop" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next desktop" onclick="plusSlides(1)">&#10095;</a>
+                    --> 
+                  </div>
+                  <br>
+                  
+                  <!-- The dots/circles -->
+                  <div class="desktop" style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                  </div>
+                </div> 
+                <div class="column">
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores eos sunt rem vero fuga corrupti. Non cum hic nesciunt impedit ipsam consequuntur repudiandae, omnis error harum quia perferendis veniam enim blanditiis sed reiciendis magni mollitia tenetur. Deserunt ad quae recusandae possimus nobis quam voluptas, id laborum repellat voluptatem nesciunt nostrum!
+                  </p> 
+                </div> 
+              </div>
+        <div>
+          <div class="staff">
+          <div> 
+              <h1 class="heading title is-4">Staff</h1>
+          </div>
+          <div class="columns">
+              <div class="column">
+                <div class="employee">
+                  <div class="image">
+                    <img src="https://images.pexels.com/photos/374044/pexels-photo-374044.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> 
+                  </div>
+                  <div class="info">
+                    <div>
+                      <strong>LOREM IPSUM</strong> 
+                    </div> 
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed laudantium aliquam voluptatum provident incidunt porro cumque maiores itaque explicabo impedit!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="employee">
+                  <div class="image">
+                    <img src="https://images.pexels.com/photos/374044/pexels-photo-374044.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> 
+                  </div>
+                  <div class="info">
+                    <div>
+                      <strong>LOREM IPSUM</strong> 
+                    </div> 
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed laudantium aliquam voluptatum provident incidunt porro cumque maiores itaque explicabo impedit!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="employee">
+                  <div class="image">
+                    <img src="https://images.pexels.com/photos/374044/pexels-photo-374044.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> 
+                  </div>
+                  <div class="info">
+                    <div>
+                      <strong>LOREM IPSUM</strong> 
+                    </div> 
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed laudantium aliquam voluptatum provident incidunt porro cumque maiores itaque explicabo impedit!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!-- Bulma footer did not give the desired result -->
+            <footer class="custom-footer">
+                <div class="content has-text-centered">
+                    <!-- 
+                  <p>
+                    <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                    is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                </p> --> 
+                <p>&copy; 2015 jimmyskitcehn.com</p> 
+                </div>
+              </footer>
+        </div>
+    </div> 
+    <script src="script.js"></script>    
+</body>
+</html>

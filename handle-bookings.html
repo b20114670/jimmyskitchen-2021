@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/1.2.0/balloon.min.css" integrity="sha512-6jHrqOB5TcbWsW52kWP9TTx06FHzpj7eTOnuxQrKaqSvpcML2HTDR2/wWWPOh/YvcQQBGdomHL/x+V1Hn+AWCA==" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css"> 
+</head>
+<body id="handle-bookings-page">
+    <!-- used older version of animateCSS - https://scotch.io/tutorials/level-up-your-websites-with-animatecss -->
+    <div>
+        <div class="nav">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                  <a class="navbar-item" href="index.html">
+                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+                  </a>
+              
+                  <a id="navbar-hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                      <!-- the spans are the horizontal lines --> 
+                      <span class="animated fadeIn" aria-hidden="true"></span>
+                      <span class="animated fadeIn" aria-hidden="true"></span>
+                      <span class="animated fadeIn" aria-hidden="true"></span>
+                  </a>
+                  <div id="mobile-nav" class="mobile-nav">
+                      <!-- nav links added via JS -->
+                  </div>
+                </div>
+              
+                <div id="navbarBasicExample" class="navbar-menu">
+                  <div class="navbar-start">
+                      <!-- menus/locations/opening times will be navigated via scrollTo -->
+                      <a class="navbar-item" href="#menus">
+                          Menus
+                      </a>
+                      <a class="navbar-item" href="#location">
+                        Location 
+                      </a>
+                      <!-- the opening-times & location are the same section thus this is delibrate but may vary for mobile  -->
+                      <a class="navbar-item" href="#location">
+                        Opening times
+                    </a>
+
+                    <!-- these are seperate pages -->
+                    <a class="navbar-item">
+                      Handle bookings 
+                    </a>
+              
+                    <a class="navbar-item">
+                    About            
+                    </a>
+                </div>
+              </nav>
+        </div>
+        <div class="form contrainer">
+            <h1 class="heading title is-4">Book a table</h1>
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Text input">
+                </div>
+              </div>
+              <div class="field">
+                <label for="" class="label">Date</label>
+                <div class="control">
+                    <input type="date" id="start" name="trip-start"
+                    value="2018-07-22"
+                    min="2018-01-01" max="2018-12-31">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Time</label>
+                <div class="control">
+                  <div class="select">
+                    <select>
+                      <option>4pm</option>
+                      <option>5pm</option>
+                      <option>6pm</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="field">
+                <div class="control columns">
+                    <div class="column">
+                    <label class="radio">
+                        <input type="radio" name="question">
+                        table for 2
+                    </label>
+                    </div>
+                    <div class="column">
+                        <label class="radio">
+                            <input type="radio" name="question">
+                            table for 4 
+                            </label>
+                        </div>
+                    <div class="column">
+                        <label class="radio">
+                            <input type="radio" name="question">
+                            table for 6 
+                            </label>
+                        </div>
+                    </div>
+              </div>
+              
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link">Submit</button>
+                </div>
+              </div>
+        </div>
+        <div class="bookings">
+            <h1 class="heading title is-4">Your booking/s</h1>
+            <table class = "table">
+                <thead>
+                   <tr>
+                      <th>Name</th>
+                      <th>Time</th>
+                      <th>Date</th>
+                      <th>Table size</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td>Clyde</td>
+                      <td>5:00pm</td>
+                      <td>20/2/2020</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+             </table> 
+        </div>
+        <div>
+            <!-- Bulma footer did not give the desired result -->
+            <footer class="custom-footer">
+                <div class="content has-text-centered">
+                    <!-- 
+                  <p>
+                    <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                    is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                </p> --> 
+                <p>&copy; 2015 jimmyskitcehn.com</p> 
+                </div>
+              </footer>
+        </div>
+    </div> 
+    <script src="script.js"></script>    
+</body>
+</html>

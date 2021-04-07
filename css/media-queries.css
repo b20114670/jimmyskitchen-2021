@@ -1,0 +1,78 @@
+@media only screen and (min-device-width: 480px) {
+  .desktop {
+    display: block; 
+  } 
+  .mobile {
+    display: none; 
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .desktop {
+    display: none; 
+  } 
+  .mobile {
+    display: flex; 
+  }
+  body {
+    /*
+         map may need to be made fluid or require a media query due to this 
+        this property also helps the nav hamburger stay on the screen when scrolling downwards 
+        */
+    overflow-x: hidden;
+  }
+  .nav {
+    position: fixed;
+    top: 4vh;
+  }
+  /*.menus */
+  .tabs {
+    padding-top: 4vh;
+    text-align: center;
+    margin-left: -5.3vw;
+  }
+  .menu {
+    padding-top: 8vh;
+    text-align: center;
+    margin-left: -5.3vw;
+  }
+  .menu .food-item .description {
+    /* container */
+    width: 90vw;
+    margin-left: 9vw;
+  }
+  .menu .price {
+    margin-right: 5vw;
+  }
+
+  .about .intro p {
+    /* 
+    max-width: 50vw;
+    margin-left: -11vw;
+    */
+    max-width: 90vw;
+    margin-left: 10vw;
+  }  
+
+  .staff .employee .info strong {
+    margin-left: 30vw; 
+  }
+
+  .staff .employee .image {
+    margin-left: 30vw; 
+  }
+
+  .staff .employee .image img {
+    width: 30vw; 
+    height: 30vh; 
+  }
+
+  .staff .employee .info {
+    width: 100vw; 
+  } 
+
+  .bookings .table {
+    position: relative;
+    right: 20vw; 
+  }
+}

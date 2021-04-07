@@ -1,0 +1,40 @@
+.menus .heading {
+    padding-top: 8vh; 
+    text-align: center;
+    margin-left: -5.3vw; 
+}
+.tabs .column {
+    width: 10vw; 
+} 
+.tabs button:hover {
+    cursor: pointer; 
+} 
+.menu .food-item { /* container */
+    margin-top: 1vh; 
+}
+.menu .title {
+    padding-bottom: 2vh;
+    border-bottom: 4px groove blue;
+} 
+.menu .price {
+    margin-right: -35vw; 
+}
+.menu .description {
+    margin-top: -3vh; 
+    width: 30vw; 
+}
+.menu-food-item-image div img {
+    height: 70vh;  
+}
+
+.location-and-opening-times .heading {
+    padding-top: 8vh; 
+    text-align: center;
+    margin-left: -5.3vw; 
+}
+.location-and-opening-times .columns {
+    padding-top: 2vh; 
+}
+.opening-times {
+    text-align: center;
+} 

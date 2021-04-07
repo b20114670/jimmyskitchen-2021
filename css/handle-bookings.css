@@ -1,0 +1,19 @@
+.form {
+    width: 80vw; 
+    padding: 10vh 10vw 10vh 30vw; 
+} 
+
+.form .heading {
+    text-align: center;
+    margin-left: -5.3vw; 
+}
+
+.bookings .heading {
+    text-align: center;
+    margin-left: -20vw; 
+}
+
+.bookings {
+    width: 80vw; 
+    padding: 10vh 10vw 10vh 30vw; 
+}

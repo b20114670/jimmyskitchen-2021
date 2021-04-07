@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/1.2.0/balloon.min.css" integrity="sha512-6jHrqOB5TcbWsW52kWP9TTx06FHzpj7eTOnuxQrKaqSvpcML2HTDR2/wWWPOh/YvcQQBGdomHL/x+V1Hn+AWCA==" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" /> 
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css"> 
+</head>
+<body id="home-page">
+    <!-- used older version of animateCSS - https://scotch.io/tutorials/level-up-your-websites-with-animatecss -->
+    <div>
+        <div class="nav"> 
+            <!-- bug: hamburger may require double quick initailly -->
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                  <a class="navbar-item" href="index.html" data-can-scroll="false" id="logo" data-balloon-pos="down" aria-label="Click here to go home">
+                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+                  </a>
+              
+                  <a id="navbar-hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                      <!-- the spans are the horizontal lines --> 
+                      <span class="animated fadeIn" aria-hidden="true"></span>
+                      <span class="animated fadeIn" aria-hidden="true"></span>
+                      <span class="animated fadeIn" aria-hidden="true"></span>
+                  </a>
+                  <div id="mobile-nav" class="mobile-nav">
+                      <!-- nav links added via JS -->
+                  </div>
+                </div>
+              
+                <div id="navbarBasicExample" class="navbar-menu">
+                  <div class="navbar-start">
+                      <!-- menus/locations/opening times will be navigated via scrollTo -->
+                      <a class="navbar-item" href="#menus" data-can-scroll="true">
+                          Menus
+                      </a>
+                      <a class="navbar-item" href="#location" data-can-scroll="true">
+                        Location & Opening times 
+                      </a>
+                      <!-- the opening-times & location are the same section thus this is delibrate but may vary for mobile  -->
+                      <!-- bug: opening times scroll to functionality does not work -- 
+                      <a class="navbar-item" href="#location" data-can-scroll="true">
+                        Opening times
+                    </a> 
+                    --> 
+
+                    <!-- these are seperate pages -->
+                    <a class="navbar-item" href="handle-bookings.html" data-can-scroll="false">
+                      Handle bookings 
+                    </a>
+              
+                    <a class="navbar-item" href="about.html" data-can-scroll="false">
+                    About            
+                    </a>
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <div class="phone-number" aria-label="00000 (click icon to copy to clipboard)" data-balloon-pos="down">
+                                <i class="fas fa-phone"></i> 
+                            </div> 
+                        </div>
+                        <div class="navbar-item">
+                            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a> 
+                        </div>
+                      </div>
+                    </div>
+              </nav>
+        </div>
+        <div class="menus" id="menus"> 
+            <h1 aria-label="Hover/click over items to interact" data-balloon-pos="down" class="heading title is-2">Menus</h1>
+        </div>
+        <div class="tabs columns is-centered">
+                <div class="column is-one-quarter" id="starters-tab">
+                    <button>Starters</button> 
+                </div>
+                <div class="column is-one-quarter" id="mains-tab">
+                    <button>Mains</button>
+                </div>
+                <div class="column is-one-quarter" id="deserts-tab">
+                    <button>Deserts</button>  
+                </div>
+            </div>
+            <div class="columns">
+                <!-- in retrospect food-item should be renamed to "dish" -->
+                <div class="image column menu-food-item-image" id="menu-food-item-image">
+                    <!-- images replaced via JS -->
+                    <div class="animated fadeIn"><img src="./images/food-name.jpeg" /></div>                
+                </div>
+                <div class="menu column" id="menu">
+                    <!-- menu added via JS -->
+                </div>
+            </div>
+        </div>
+        <div class="location-and-opening-times" id="location">
+            <div> 
+                <h1 class="heading title is-4">Location & Opening times</h1>
+            </div>
+            <div class="columns">
+                <div class="column" class="map">
+                    <!-- bug: map is not displayed on HTC 10 Smarthone mobile Google Chrome -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d142872.1417001874!2d-4.7057164496029324!3d55.97749374769166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2376c80cee4345f1!2sMcDonald&#39;s%20Greenock%201!5e0!3m2!1sen!2suk!4v1616867652927!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="column opening-times">
+                    <ul>
+                        <li>Monday: <strong>Open 3pm - 8pm</strong></li>
+                        <li>Monday: <strong>Open 3pm - 8pm</strong></li>
+                        <li>Monday: <strong>Open 3pm - 8pm</strong></li>
+                        <li>Monday: <strong>Open 3pm - 8pm</strong></li>
+                        <li>Monday: <strong>Open 3pm - 8pm</strong></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <div>
+                        <img src="https://images.pexels.com/photos/1500459/pexels-photo-1500459.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> 
+                    </div>
+                    <div>
+                        <img src="https://images.pexels.com/photos/3465604/pexels-photo-3465604.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <!-- Bulma footer did not give the desired result -->
+            <footer class="custom-footer">
+                <div class="content has-text-centered">
+                    <!-- 
+                  <p>
+                    <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                    is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                </p> --> 
+                <div class="flex">
+                    <div class="phone-number" aria-label="00000 (click icon to copy to clipboard)" data-balloon-pos="up">
+                        <i class="fas fa-phone"></i> 
+                    </div> 
+                    <div>
+                        <a href="https://twitter.com"><i class="fab fa-twitter"></i></a> 
+                    </div>
+                </div> 
+                <p>&copy; 2015 jimmyskitcehn.com</p> 
+                </div>
+              </footer>
+        </div>
+    </div> 
+    <script src="script.js"></script>    
+</body>
+</html>

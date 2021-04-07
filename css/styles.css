@@ -1,0 +1,26 @@
+@import 'nav.css';
+@import 'footer.css';
+@import 'home.css';
+@import 'about.css';
+@import 'handle-bookings.css';
+@import 'media-queries.css';
+.display {
+    display: none; 
+} 
+
+.flex {
+    display: flex; 
+} 
+
+.custom-footer .flex { 
+    gap: 1vw; 
+    justify-content: center;
+}
+
+.danger {
+    background-color: red; 
+}
+
+.success {
+    background-color: green; 
+}
