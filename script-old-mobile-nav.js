@@ -34,32 +34,92 @@ function updateClipboard(newClip) {
       /* clipboard write failed */
       // return "danger"; 
     });
-  } 
-
-let hamburger = document.querySelector("#navbar-hamburger"); 
-if (hamburger) {
-    hamburger.addEventListener("click", e => {
-        let mobileNav = document.querySelector("#mobile-nav"); 
-        if (mobileNav) { 
-            // desktop nav 
-            let mainNav = document.querySelector("#navbarBasicExample"); 
-            mobileNav.innerHTML = ""; 
-            mainNav.querySelectorAll(".navbar-item").forEach(navbarItem => {
-                // console.log(navbarItem); 
-                // console.log("class: " + navbarItem.classList + "\n href" + navbarItem.href  + "\n dataset: " + navbarItem.dataset.canScroll + "\n id: " + navbarItem.id  + "\n text: " + navbarItem.innerText); 
-                mobileNav.innerHTML += `<a class="mobile-nav-item animated fadeIn ${navbarItem.classList}" href="${navbarItem.href.split('#')[1]}" data-can-scroll="${navbarItem.dataset.canScroll}" data-scroll-to="${navbarItem.href.split('#')[1]}">${navbarItem.innerText}</a>`; 
-                document.querySelectorAll(".mobile-nav-item").forEach(item => {
-                    item.addEventListener("click", e => {
-                        e.preventDefault(); 
-                            console.log(e.target.href); 
-                    }); 
-                }); 
-            }); 
-        }
-    }); 
-} 
+  }
 
 // About Handle bookings Opening times Location Menus
+let hamburger = document.querySelector("#navbar-hamburger");
+let hamburgerLinks = [];
+if (document.querySelector("#home-page")) {
+    /* 
+  hamburgerLinks = [
+    "Menus",
+    "Location & Opening times",
+    // "Opening times",
+    "Handle bookings",
+    "About"
+  ];
+  */ 
+  hamburgerLinks = [
+    "Menus",
+    "Location & Opening times",
+    "Handle bookings",
+    "About"
+  ];
+  handleMobileNav(hamburgerLinks, 2); 
+  /* 
+    there are 3 scrollable links but JS arrays start from 0 hence the scrollableLinks parameter is 2 
+  */ 
+} 
+if (document.querySelector("#about-page")) {
+  hamburgerLinks = [
+    "Restaurant",
+    "Staff",
+    "Handle bookings",
+    "About"
+  ];
+  handleMobileNav(hamburgerLinks, 1); 
+} 
+if (document.querySelector("#handle-bookings-page")) {
+  hamburgerLinks = [
+    "Make a booking",
+    "Your bookings",
+    "Handle bookings",
+    "About"
+  ];
+  handleMobileNav(hamburgerLinks, 1); 
+} 
+
+function handleMobileNav(hamburgerLinks, scrollableLinks) {
+    let mobileNav = document.querySelector("#mobile-nav");
+    hamburger.addEventListener("click", (e) => {
+    mobileNav.classList.toggle("display");
+    mobileNav.innerHTML = "";
+    hamburgerLinks.forEach((link, index) => {
+        if (index <= scrollableLinks) {
+            if (link == "Location & Opening times") {
+                mobileNav.innerHTML += `<a class="animated fadeIn navbar-item" data-can-scroll="true" href="#location">${link}</a>`; 
+            } else {
+                mobileNav.innerHTML += `<a class="animated fadeIn navbar-item" data-can-scroll="true" href="#${link.replace(/ /g, "-").toLowerCase()}">${link}</a>`; 
+            }
+        } else {
+            mobileNav.innerHTML += `<a class="animated fadeIn navbar-item" data-can-scroll="false" href="#${link.replace(/ /g, "-").toLowerCase()}">${link}</a>`; 
+            console.log(link); 
+        }
+        mobileNav.querySelectorAll("a").forEach((a) => {
+            a.addEventListener("click", (e) => {
+                e.preventDefault(); 
+                // console.log(e.target); 
+                if (e.target.dataset.canScroll == "false") {
+                    console.log("redirecting"); 
+                    console.log(e.target); 
+                }
+                // console.log(e.target.innerText); 
+                if (e.target.dataset.canScroll == "true") {
+                    let element = document.getElementById(e.target.href.split("#")[1]); 
+                    if (element) {
+                        element.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                            inline: "nearest"
+                        });
+                    }
+                    }
+                });
+            });
+        });
+    });
+} 
+
 document.querySelectorAll(".navbar-item").forEach((a) => {
   a.addEventListener("click", (e) => {
     if (!e.target.classList.value.includes("fa")) {
