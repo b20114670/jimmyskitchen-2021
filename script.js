@@ -7,9 +7,11 @@ if (
   ifMouseEnter = "click";
 }
 
-document.querySelector("#logo").addEventListener("click", e => {
-    window.location.href = "index.html"; 
-}); 
+if (document.querySelector("#logo")) {
+    document.querySelector("#logo").addEventListener("click", e => {
+        window.location.href = "index.html"; 
+    }); 
+} 
 
 let phoneNumberEl = document.querySelectorAll(".phone-number"); 
 if (phoneNumberEl) {
@@ -101,12 +103,13 @@ function handleMobileNav(hamburgerLinks, scrollableLinks) {
                     // window.location.href = url; 
                     window.location.href = e.target.href; 
                 }
+                console.log(e.target.innerText); 
                 if (e.target.dataset.canScroll) {
-                    let element = document.getElementById(e.target.href.split("#")[1]);
-                    if (element.scrollIntoView) {
+                    let element = document.getElementById(e.target.href.split("#")[1]); 
+                    if (element) {
                         element.scrollIntoView({
                             behavior: "smooth",
-                            block: "end",
+                            block: "start",
                             inline: "nearest"
                         });
                     }
@@ -128,9 +131,10 @@ document.querySelectorAll(".navbar-item").forEach((a) => {
     }
     if (e.target.dataset.canScroll == "true") {
         let element = document.getElementById(e.target.href.split("#")[1]);
+        console.log(element); 
         element.scrollIntoView({
             behavior: "smooth",
-            block: "end",
+            block: "start",
             inline: "nearest"
         });
     }        

@@ -16,7 +16,7 @@
         <div class="nav">
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
-                  <a class="navbar-item" href="index.html">
+                  <a class="navbar-item" href="index.html" data-can-scroll="false" id="logo" data-balloon-pos="down" aria-label="Click here to go home">
                     <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
                   </a>
               
@@ -33,30 +33,21 @@
               
                 <div id="navbarBasicExample" class="navbar-menu">
                   <div class="navbar-start">
-                      <!-- menus/locations/opening times will be navigated via scrollTo -->
-                      <a class="navbar-item" href="#menus">
-                          Menus
-                      </a>
-                      <a class="navbar-item" href="#location">
-                        Location 
-                      </a>
                       <!-- the opening-times & location are the same section thus this is delibrate but may vary for mobile  -->
-                      <a class="navbar-item" href="#location">
-                        Opening times
-                    </a>
-
-                    <!-- these are seperate pages -->
-                    <a class="navbar-item">
-                      Handle bookings 
-                    </a>
-              
-                    <a class="navbar-item">
-                    About            
-                    </a>
+                      <a class="navbar-item" href="#restaurant" data-can-scroll="true">
+                        About the restaurant 
+                      </a>
+                      <a class="navbar-item" href="#staff" data-can-scroll="true">
+                        Staff 
+                      </a>
+                      <!-- these are seperate pages -->
+                      <a class="navbar-item" href="handle-bookings.html" data-can-scroll="false">
+                        Handle Bookings 
+                      </a>
                 </div>
               </nav>
         </div>
-        <div class="about"> 
+        <div class="about" id="restaurant"> 
             <h1 class="heading title is-4">About the restaurant</h1>
             <div class="columns intro">
                 <div class="column">
@@ -104,7 +95,7 @@
                 </div> 
               </div>
         <div>
-          <div class="staff">
+          <div class="staff" id="staff">
           <div> 
               <h1 class="heading title is-4">Staff</h1>
           </div>
