@@ -5,3 +5,9 @@
     position: fixed; 
     z-index: 100; 
 }
+
+/* 
+.current {
+    text-decoration: underline;
+} 
+*/ 
