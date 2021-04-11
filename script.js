@@ -38,41 +38,46 @@ function updateClipboard(newClip) {
 
 let hamburger = document.querySelector("#navbar-hamburger"); 
 if (hamburger) {
+    let hamburgerShown = false; 
     hamburger.addEventListener("click", e => {
+        hamburgerShown = !hamburgerShown; 
+        // console.log(hamburgerShown)
         let mobileNav = document.querySelector("#mobile-nav"); 
         if (mobileNav) { 
             // desktop nav 
             let mainNav = document.querySelector("#navbarBasicExample"); 
             mobileNav.innerHTML = ""; 
-            mainNav.querySelectorAll(".navbar-item").forEach(navbarItem => {
-                // console.log(navbarItem); 
-                // console.log("class: " + navbarItem.classList + "\n href" + navbarItem.href  + "\n dataset: " + navbarItem.dataset.canScroll + "\n id: " + navbarItem.id  + "\n text: " + navbarItem.innerText); 
-                // mobileNav.innerHTML += `<a class="mobile-nav-item animated fadeIn ${navbarItem.classList}" href="${navbarItem.href.split('#')[1]}" data-can-scroll="${navbarItem.dataset.canScroll}" data-scroll-to="${navbarItem.href.split('#')[1]}">${navbarItem.innerText}</a>`; 
-                mobileNav.innerHTML += `<a class="mobile-nav-item animated fadeIn ${navbarItem.classList}" href="${navbarItem.href.split('#')[1]}" data-can-scroll="${navbarItem.dataset.canScroll}" data-nav-to="${navbarItem.href}">${navbarItem.innerText}</a>`; 
-                document.querySelectorAll(".mobile-nav-item").forEach(item => {
-                    item.addEventListener("click", e => {
-                        e.preventDefault(); 
-                        if (item.dataset.canScroll == "true") { 
-                            // console.log(e.target.href); 
-                            let loc = window.location.pathname;
-                            let dir = loc.substring(0, loc.lastIndexOf('/')); 
-                            // console.log(e.target.href.replace(loc)); 
-                            let scrollTo = e.target.href.substring(e.target.href.lastIndexOf('/')).replace("/", ""); 
-                            let element = document.getElementById(scrollTo);
-                            // console.log(element)
-                            if (element) {
-                                element.scrollIntoView({
-                                    behavior: "smooth",
-                                    block: "start",
-                                    inline: "nearest"
-                                });
-                            } 
-                        } else {
-                            window.location.href = e.target.dataset.navTo; 
-                        }
+            if (hamburgerShown == true) {
+                mainNav.querySelectorAll(".navbar-item").forEach(navbarItem => {
+                    // console.log(navbarItem); 
+                    // console.log("class: " + navbarItem.classList + "\n href" + navbarItem.href  + "\n dataset: " + navbarItem.dataset.canScroll + "\n id: " + navbarItem.id  + "\n text: " + navbarItem.innerText); 
+                    // mobileNav.innerHTML += `<a class="mobile-nav-item animated fadeIn ${navbarItem.classList}" href="${navbarItem.href.split('#')[1]}" data-can-scroll="${navbarItem.dataset.canScroll}" data-scroll-to="${navbarItem.href.split('#')[1]}">${navbarItem.innerText}</a>`; 
+                    mobileNav.innerHTML += `<a class="mobile-nav-item animated fadeIn ${navbarItem.classList}" href="${navbarItem.href.split('#')[1]}" data-can-scroll="${navbarItem.dataset.canScroll}" data-nav-to="${navbarItem.href}">${navbarItem.innerText}</a>`; 
+                    document.querySelectorAll(".mobile-nav-item").forEach(item => {
+                        item.addEventListener("click", e => {
+                            e.preventDefault(); 
+                            if (item.dataset.canScroll == "true") { 
+                                // console.log(e.target.href); 
+                                let loc = window.location.pathname;
+                                let dir = loc.substring(0, loc.lastIndexOf('/')); 
+                                // console.log(e.target.href.replace(loc)); 
+                                let scrollTo = e.target.href.substring(e.target.href.lastIndexOf('/')).replace("/", ""); 
+                                let element = document.getElementById(scrollTo);
+                                // console.log(element)
+                                if (element) {
+                                    element.scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "start",
+                                        inline: "nearest"
+                                    });
+                                } 
+                            } else {
+                                window.location.href = e.target.dataset.navTo; 
+                            }
+                        }); 
                     }); 
                 }); 
-            }); 
+            }
         }
     }); 
 } 
