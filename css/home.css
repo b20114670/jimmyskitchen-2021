@@ -14,7 +14,7 @@
 }
 .menu .title {
     padding-bottom: 2vh;
-    border-bottom: 4px groove blue;
+    border-bottom: 4px groove var(--theme-color);
 } 
 .menu .price {
     margin-right: -35vw; 

@@ -6,6 +6,11 @@
     z-index: 100; 
 }
 
+a:hover {
+    color: var(--theme-color) !important; 
+} 
+
+
 /* 
 .current {
     text-decoration: underline;

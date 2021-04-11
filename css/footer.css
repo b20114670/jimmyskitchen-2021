@@ -1,6 +1,6 @@
         /* https://www.w3schools.com/howto/howto_css_fixed_footer.asps */ 
         .custom-footer {
-            background-color: aqua;
+            background-color: var(--theme-color);
             /* position: fixed; */ 
             position: relative;
             left: 0;

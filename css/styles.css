@@ -4,6 +4,10 @@
 @import 'about.css';
 @import 'handle-bookings.css';
 @import 'media-queries.css';
+:root {
+    --theme-color: #A6341B; 
+}
+
 .display {
     display: none; 
 } 
@@ -24,3 +28,12 @@
 .success {
     background-color: green; 
 }
+
+.theme-color {
+    background-color: var(--theme-color) !important; 
+} 
+
+button {
+    background-color: var(--theme-color) !important;
+} 
+
